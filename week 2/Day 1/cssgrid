@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html large"en">
+    <head>
+        <meta charset="UTF-8">
+        <META NAME="VIEWPOINT" content="width=device-width, initial-scale=1.0">
+            <title>Flex</title>
+    </head>
+      <body>
+        <selection class="flex contaier">
+            <div class="box"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+
+        </selection>
+
+        <style>
+            .flex-container{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+            }
+
+            .box{
+                background-color: red;
+                width:100px;
+                height:400px;
+
+            }
+
+            .box2{
+                background-color: rgb(104, 37, 158);
+                width:100px;
+                height:400px;
+
+            }
+
+            .box3{
+                background-color: rgb(216, 85, 85);
+                width:100px;
+                height:400px;
+
+            }
+
+        </style>
+
+    </body>
+</html>
