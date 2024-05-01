@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    #target {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      background: yellow;
+    }
+    #box {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+      cursor: move; /* Change cursor to indicate draggable */
+    }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+    <br>
+    <div id="box"></div>
+
+    <script>
+        // Get the box element
+        var box = document.getElementById('box');
+
+        // Set initial position of the box
+        var initialX = 0;
+        var initialY = 0;
+
+        // Function to handle mouse down event
+        function dragStart(e) {
+            initialX = e.clientX - box.offsetLeft;
+            initialY = e.clientY - box.offsetTop;
+            window.addEventListener('mousemove', drag);
+            window.addEventListener('mouseup', dragEnd);
+        }
+
+        // Function to handle mouse move event
+        function drag(e) {
+            e.preventDefault();
+            var newX = e.clientX - initialX;
+            var newY = e.clientY - initialY;
+            box.style.left = newX + 'px';
+            box.style.top = newY + 'px';
+        }
+
+        // Function to handle mouse up event
+        function dragEnd() {
+            window.removeEventListener('mousemove', drag);
+            window.removeEventListener('mouseup', dragEnd);
+        }
+
+        // Add event listener for mouse down event on the box
+        box.addEventListener('mousedown', dragStart);
+    </script>
+</body>
+</html>
